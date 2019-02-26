@@ -9,8 +9,8 @@
 import HelloWorld from './components/HelloWorld.vue'
 
 const x = {
-b: 1,
 a: [],
+b: 1,
 c: {},
 d: 2
 }
@@ -24,8 +24,8 @@ export default {
   methods: {
 foo() {
 const x = {
-b: 1,
 a: [],
+b: 1,
 c: {},
 d: 2
 }
