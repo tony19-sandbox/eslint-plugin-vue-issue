@@ -35,7 +35,7 @@
         {
           "ignores": [
             "[value.type='ObjectExpression']:not([key.name='methods'])",
-            "[value.type='ArrayExpression']:not([key.name='methods'])"
+            "[value.type='ArrayExpression']"
           ]
         }
       ]
