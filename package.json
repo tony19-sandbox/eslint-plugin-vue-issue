@@ -28,7 +28,18 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "vue/script-indent": [
+        "error",
+        2,
+        {
+          "ignores": [
+            "[value.type='ObjectExpression']:not([key.name='methods'])",
+            "[value.type='ArrayExpression']:not([key.name='methods'])"
+          ]
+        }
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
