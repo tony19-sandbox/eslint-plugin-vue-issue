@@ -8,10 +8,29 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+const x = {
+a: [],
+b: 1,
+c: {},
+d: 2
+}
+console.log(x)
+
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods: {
+foo() {
+const x = {
+a: [],
+b: 1,
+c: {},
+d: 2
+}
+console.log(x)
+}
   }
 }
 </script>
