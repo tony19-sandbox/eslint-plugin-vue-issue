@@ -22,15 +22,15 @@ export default {
     HelloWorld
   },
   methods: {
-foo() {
-const x = {
+    foo() {
+      const x = {
 a: [],
 b: 1,
 c: {},
 d: 2
-}
-console.log(x)
-}
+      }
+      console.log(x)
+    }
   }
 }
 </script>
