@@ -33,8 +33,9 @@
         "error",
         2,
         {
+          "baseIndent": 1,
           "ignores": [
-            "[value.type='ObjectExpression']:not([key.name='methods'])",
+            "[value.type='ObjectExpression']:not(:matches(ExportDefaultDeclaration, [left.property.name='exports']) > * > [value.type='ObjectExpression'])",
             "[value.type='ArrayExpression']"
           ]
         }
