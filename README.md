@@ -6,20 +6,18 @@
 
  1. Generate a Vue CLI project with `vue create`, and pick the default setup at the prompt.
 
- 2. In `package.json > eslintConfig > rules`, add the following rule to ignore nested arrays/objects:
+ 2. In `package.json > eslintConfig > rules`, add the following rule to ignore nested arrays/objects, excluding top level from the exported object in `.vue`:
 
         "vue/script-indent": [
           "error",
           2,
           {
             "ignores": [
-              "[value.type='ObjectExpression']:not([key.name='methods'])",
+              "[value.type='ObjectExpression']:not(:matches(ExportDefaultDeclaration, [left.property.name='exports']) > * > [value.type='ObjectExpression'])",
               "[value.type='ArrayExpression']"
             ]
           }
         ]
-
-   *Note: The exported object in a `.vue` file typically contains a `methods` field, which itself is a nested object, so the rule above excludes that particular object to allow formatting there.*
 
  2. In `App.vue`, add the following unindented code:
 
