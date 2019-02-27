@@ -13,7 +13,7 @@ b: 1,
 c: {},
 d: 2
 }
-console.log(x)
+console.log(x) // eslint-disable-line no-console
 
 export default {
 name: 'app',
