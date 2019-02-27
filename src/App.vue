@@ -7,7 +7,6 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
 const x = {
 a: [],
 b: 1,
@@ -17,11 +16,22 @@ d: 2
 console.log(x)
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  },
-  methods: {
+name: 'app',
+components: {
+HelloWorld
+},
+
+data() {
+const x = {
+a: [],
+b: 1,
+c: {},
+d: 2
+}
+return x;
+},
+
+methods: {
 foo() {
 const x = {
 a: [],
@@ -29,9 +39,21 @@ b: 1,
 c: {},
 d: 2
 }
-console.log(x)
+return x;
 }
-  }
+},
+
+computed: {
+bar() {
+const x = {
+a: [],
+b: 1,
+c: {},
+d: 2
+}
+return x;
+}
+}
 }
 </script>
 
