@@ -1,8 +1,28 @@
-# eslint-plugin-vue-issue
+> Demo for [`vuejs/eslint-plugin-vue#833`](https://github.com/vuejs/eslint-plugin-vue/issues/833)
 
-> Demonstrates a linter bug using `vue/script-indent`
+This project demonstrates a linter bug, where lines are incorrectly untouched when configuring `vue/script-indent` to ignore nested objects/arrays.
 
 ## Steps to reproduce
+
+ 1. Clone this repo with: `git clone https://github.com/tony19-sandbox/eslint-plugin-vue-issue-x.git`
+
+ 2. Run the linter with: `npm run lint` or `yarn lint`.
+
+ 3. Observe `foo()` in `App.vue` is formatted as:
+
+          methods: {
+            foo() {
+              const x = {
+        a: [],
+        b: 1,             // <-- FIXME: should be indented
+        c: {},
+        d: 2              // <-- FIXME: should be indented
+              }
+              console.log(x)
+            }
+          }
+
+## Original project setup
 
  1. Generate a Vue CLI project with `vue create`, and pick the default setup at the prompt.
 
@@ -19,7 +39,7 @@
           }
         ]
 
- 2. In `App.vue`, add the following unindented code:
+ 3. In `App.vue`, add the following unindented code:
 
         methods: {
         foo() {
@@ -32,19 +52,3 @@
         console.log(x)
         }
         }
-
- 3. Run the linter with `npm run lint` or `yarn lint`.
-
- 4. Observe the method we added in `App.vue` is now:
-
-          methods: {
-            foo() {
-              const x = {
-        a: [],
-        b: 1,             // <-- FIXME: should be indented
-        c: {},
-        d: 2              // <-- FIXME: should be indented
-              }
-              console.log(x)
-            }
-          }
